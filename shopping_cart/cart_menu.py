@@ -1,11 +1,10 @@
-import firebase_admin
 from firebase_admin import firestore
-
 
 class CartMenu:
 
     def __init__(self):
         self.db = firestore.client()
+        self.current_cart = []
 
     def menu_loop(self):
         choice = None
