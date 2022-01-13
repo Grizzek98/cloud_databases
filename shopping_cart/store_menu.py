@@ -46,25 +46,27 @@ class StoreMenu:
 
     def check_category(self):
         # ask for category
-        print('\nPlease enter name of category (0 to return):')
+        print('\nPlease enter category number:')
         col_result = self.db.collections()
         collections = []
         choice = None
         while choice != 0:
-            for record in col_result:
-                print(f'*) {record.id}')
-                collections.append(record.id)
-            col_id = input('> ')
-            # check if exists
-            if col_id.upper() in collections:
-                self.add_item()
+            print('0) Return')
+            print('1) Create New Category')
+            indices = []
+            for num, record in enumerate(col_result, start=2):
+                print(f'{num}) {record.id}')
+                indices.append(num)
+            choice = int(input('> '))
+            if choice in indices:
+                self.check_name()
             else:
                 # if not, ask if should be added
                 while choice != 'n':
                     print('Category does not exist in database. Add it? (y/n)')
                     choice = input('> ')
                     if choice == 'y':
-                        self.add_item()
+                        self.check_name()
                 choice = 0
         
         # ask for name, check if exists
@@ -74,5 +76,11 @@ class StoreMenu:
         #       modified: ask for price
         #           remove item
 
-    def add_item(self):
-        pass
+    def check_name(self):
+        choice = None
+        while choice != 0:
+            try:
+                print('Please enter name of product:')
+
+            except:
+                pass
