@@ -9,9 +9,9 @@ class StoreMenu:
         choice = None
         while choice != 0:
             print('\n---- STORE MENU ----')
+            print('0) Return to Main Menu')
             print('1) Find Items By Category')
             print('2) Modify Item')
-            print('0) Return to Main Menu')
             choice = int(input('> '))
 
             if choice == 1:
