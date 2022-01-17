@@ -18,9 +18,9 @@ class MainMenu:
         while choice != 0:
             # print menu options
             print('\n---- MAIN MENU ----')
+            print('0) Quit')
             print('1) Cart Menu')
             print('2) Store Menu')
-            print('0) Quit')
             choice = int(input('> '))
 
             if choice == 1:

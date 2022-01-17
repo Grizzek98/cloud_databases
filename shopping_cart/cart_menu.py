@@ -12,14 +12,15 @@ class CartMenu:
 
         choice = None
         while choice != 0:
-            print('\n---- STORE MENU ----')
+            print('\n---- CART MENU ----')
+            print('0) Return to Main Menu')
             print('1) View Cart')
             print('2) Add Item')
             print('3) Remove Item')
-            print('0) Return to Main Menu')
             choice = int(input('> '))
 
             if choice == 1:
+                print('\n---- CURRENT CART ----')
                 self.view_cart()
             elif choice == 2:
                 self.add_item()
