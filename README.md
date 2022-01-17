@@ -1,6 +1,6 @@
 # Overview
 
-This program is a simple cloud-based shopping cart / store system. It allows you to see and lodify a list of products stored in the cloud. It also allows you to modify a shopping cart that will estimate the total cost of products inside.
+This program is a simple cloud-based shopping cart / store system. It allows you to see and modify a list of products stored in the cloud. It also allows you to modify a shopping cart that will estimate the total cost of products inside.
 
 This program creates a connection to a Google Firebase Firestore database in order to retrieve or modify data in the "store".
 
