@@ -20,7 +20,6 @@ class CartMenu:
             choice = int(input('> '))
 
             if choice == 1:
-                print('\n---- CURRENT CART ----')
                 self.view_cart()
             elif choice == 2:
                 self.add_item()
@@ -32,12 +31,15 @@ class CartMenu:
     def view_cart(self):
         """ Prints the contents of the current cart onto the terminal
         """
-
+        price_list = []
         print("\n---- CURRENT CART ----")
         for num, product in enumerate(self.current_cart, start=1):
             for field in product:
-                print(f'{num}) {field} - ${product[field]:.2f}')
-
+                print (f'{num}) {field:>15}   | ${product[field]:.2f}')
+                # print('{0}) {1:>7}')
+                price_list.append(product[field])
+        print('---------------------------')
+        print(f'              Total  | ${sum(price_list):.2f}')
 
     def add_item(self):
         """ Allows the user to add items to the current cart by index
