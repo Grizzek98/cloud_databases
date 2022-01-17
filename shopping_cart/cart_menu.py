@@ -36,7 +36,6 @@ class CartMenu:
         for num, product in enumerate(self.current_cart, start=1):
             for field in product:
                 print (f'{num}) {field:>15}   | ${product[field]:.2f}')
-                # print('{0}) {1:>7}')
                 price_list.append(product[field])
         print('---------------------------')
         print(f'              Total  | ${sum(price_list):.2f}')
