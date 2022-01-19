@@ -6,7 +6,7 @@ This program creates a connection to a Google Firebase Firestore database in ord
 
 The purpose of writing this software was to learn how Google Cloud Databases work, and how to interact with them.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://www.youtube.com/watch?v=-wq5e4gYKhg)
 
 # Cloud Database
 
@@ -24,7 +24,6 @@ Categories can contain many Products and Products contain
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
 * [Code First With Hala - Youtube Playlist](https://www.youtube.com/watch?v=Hh4IAwcZBLM&list=PLs3IFJPw3G9LW-rGJ8EBMaCd8OxGm_qQe&index=1)
 * [Google Firebase](https://firebase.google.com/docs/firestore)
 
