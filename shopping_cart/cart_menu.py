@@ -3,14 +3,16 @@ from shopping_cart.database import Database
 class CartMenu:
 
     def __init__(self):
+        # initialize database and cart
         self.db = Database()
         self.current_cart = []
+
 
     def menu_loop(self):
         """ Loops through a list of menu options until a choice is made
         """
-
         choice = None
+        # start menu loop
         while choice != 0:
             print('\n---- CART MENU ----')
             print('0) Return to Main Menu')
@@ -28,10 +30,13 @@ class CartMenu:
             elif choice != 0:
                 print('\nInvalid Choice\n')
 
+
     def view_cart(self):
-        """ Prints the contents of the current cart onto the terminal
+        """ Prints the contents of the current cart onto the terminal, 
+            and totals the prices
         """
         price_list = []
+        # print objects in cart formatted
         print("\n---- CURRENT CART ----")
         for num, product in enumerate(self.current_cart, start=1):
             for field in product:
@@ -40,13 +45,12 @@ class CartMenu:
         print('---------------------------')
         print(f'              Total  | ${sum(price_list):.2f}')
 
+
     def add_item(self):
         """ Allows the user to add items to the current cart by index
         """
-
         # return product list by category using Database class
         product_list = self.db.return_product_list()
-
         # print product list contents
         choice = None
         while choice != 0:
@@ -68,16 +72,16 @@ class CartMenu:
                         self.current_cart.append(product_dict)
                         choice = None
                 except ValueError:
-                    print('\nInvalid Choice\n')
+                    print('\nInvalid Choice - Choose available index')
                 except:
-                    print('\nError\n')
+                    print('\nError')
             except:
                 return
+
 
     def remove_item(self):
         """ Allows the user to remove items from the cart by index
         """
-
         # print cart's contents
         choice = None
         while choice != 0:
@@ -95,6 +99,6 @@ class CartMenu:
                         # remove item from cart
                         del self.current_cart[choice-1]
                     except:
-                        print('Something Happened')
+                        print('\nDeletion Error')
             except ValueError:
-                print('\nInvalid Choice\n')
+                print('\nInvalid Choice - Choose available index')

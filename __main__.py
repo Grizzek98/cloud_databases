@@ -8,6 +8,7 @@ cred = credentials.Certificate("untracked_files\\ServiceAccountKey.json")
 firebase_admin.initialize_app(cred)
 
 def main():
+    # initalize main menu object and run loop
     main_menu = MainMenu()
     main_menu.menu_loop()
 

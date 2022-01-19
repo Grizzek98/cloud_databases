@@ -21,15 +21,14 @@ class MainMenu:
             print('0) Quit')
             print('1) Cart Menu')
             print('2) Store Menu')
-            choice = int(input('> '))
+            try:
+                choice = int(input('> '))
 
-            if choice == 1:
-                # run the cart menu loop
-                self.cart_menu.menu_loop()
-
-            elif choice == 2:
-                # run the store menu loop
-                self.store_menu.menu_loop()
-
-            elif choice != 0:
-                print('\nInvalid Choice\n')
+                if choice == 1:
+                    self.cart_menu.menu_loop()
+                elif choice == 2:
+                    self.store_menu.menu_loop()
+                elif choice != 0:
+                    print('\nPlease choose an available index')
+            except ValueError:
+                print('\nInvalid Entry - Choose available index')
